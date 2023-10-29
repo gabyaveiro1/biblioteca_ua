@@ -1,0 +1,116 @@
+
+<!-- Filter Datatable Options Starts -->
+<div class="row">
+  <div class="col-sm-12 mb-4">
+    <div class="card">
+      <div class="card-header text-uppercase">
+        Carreras
+        <button
+          class="justify-content-end"
+          type="button"
+          class="btn btn-success m-1"
+          data-toggle="modal" 
+          data-target="#formemodal"
+        >
+          <i class="fa fa fa-add"></i> <span> +</span>
+        </button>
+      </div>
+      
+      <div class="card-body">
+        
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filtrar por descripcion..."
+          (keyup)="updateFilter($event)"
+        />
+        <ngx-datatable
+          #table
+          class="bootstrap"
+          [columns]="columns"
+          [columnMode]="'force'"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [limit]="10"
+          [rows]="rows" 
+        >
+        <ngx-datatable-column name="codigo"></ngx-datatable-column> 
+        <ngx-datatable-column name="descripcion"></ngx-datatable-column> 
+        <ngx-datatable-column name="acciones" sortable="false" prop="id">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+    
+                <button md-icon-button (click)="blockAgents(value)">
+                  <i class="fa fa-ban"></i>
+                </button>
+    
+                <button md-icon-button (click)="approveAgent(value)">
+                  <i class="fa fa-check"></i>
+                </button>
+    
+          </ng-template>
+    </ngx-datatable-column>
+        </ngx-datatable>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter Datatable Options Ends -->
+
+<!-- Modal -->
+<div class="modal fade" id="formemodal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar Carrera</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" [formGroup]="careerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="input-1">Codigo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-1"
+              placeholder="Codigo de carrera"
+              formControlName="codigo"
+            />
+          </div>
+          <div class="form-group">
+            <label for="input-2">Descipción</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-2"
+              placeholder="Descripcion"
+              formControlName="descripcion"
+            />
+          </div>
+          <div class="form-group">
+            <label for="input-3">Activo</label>
+            <input
+              type="checkbox"
+              class="form-control"
+              id="input-3"
+            />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary px-5" (click)="onSubmit()">
+              <i class="icon-save"></i> Crear
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

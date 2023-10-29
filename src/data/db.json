@@ -1,0 +1,128 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "usuario": "gaveiro",
+      "email": "gaveeeeiro@gmail.com"
+    },
+    {
+      "id": 2,
+      "usuario": "cferrario",
+      "email": "ciroferrario@gmail.com"
+    },
+    {
+      "id": 3,
+      "usuario": "prueba",
+      "email": "prueba@gmail.com"
+    },
+    {
+      "id": 4,
+      "usuario": "usuario1",
+      "email": "usuario1@gmail.com"
+    },
+    {
+      "id": 5,
+      "usuario": "",
+      "email": ""
+    },
+    {
+      "id": 6,
+      "usuario": "",
+      "email": ""
+    },
+    {
+      "id": 7,
+      "usuario": "",
+      "email": ""
+    },
+    {
+      "id": 8,
+      "usuario": "",
+      "email": ""
+    },
+    {
+      "id": 9,
+      "usuario": "gaby",
+      "email": "gaby@gmail.com"
+    },
+    {
+      "id": 10,
+      "usuario": "gaby",
+      "email": "gaby@gmail.com"
+    },
+    {
+      "id": 11,
+      "usuario": "gaby",
+      "email": "gaby@gmail.com"
+    },
+    {
+      "id": 12,
+      "usuario": "gaby",
+      "email": "gaby@gmail.com"
+    }
+  ],
+  "proyectos": [
+    {
+      "id": 1,
+      "nro_acceso": 17,
+      "cutter": "V393t",
+      "anho_presentacion": 2020,
+      "autor": "Chamorro Sosa, Eliane Mercedes.",
+      "tutor": "Mg Vazquez, Diego",
+      "titulo": "La tiendita de la danza.",
+      "modalidad_id": 1,
+      "dependencia_id": 1,
+      "nro_acto": "no menciona",
+      "calificacion": "no menciona",
+      "miembros_mesa": "no menciona",
+      "carrera_id": 1,
+      "nivel_id": 1,
+      "sede_id": 1,
+      "cantidad_pagina": 168,
+      "tomo_volumenes": "",
+      "idioma_id": 1,
+      "soporte_id": 1,
+      "nota": "",
+      "resumen": "El proyecto pretende brindar a bailarines estudiantes, profesionales y aficionados, una opción de compra en donde puedan ser asesorados por profesionales de manera a que puedan realizar sus compras inteligentemente.",
+      "observacion": "",
+      "fecha_registro": "22/2/2021",
+      "usuario_registro": "gabyaveiro",
+      "usuario_edicion": "ciroferrario",
+      "usuario_eliminacion": "ciroferrario",
+      "fecha_edicion": "22/2/2021",
+      "fecha_eliminacion": "22/2/2021",
+      "activo": true
+    },
+    {
+      "id": 1,
+      "nro_acceso": 17,
+      "cutter": "Z49a",
+      "anho_presentacion": 2019,
+      "autor": "Zelada Araujo, Lourdes Noemi- González Cabello Maldonado, Stephanía ",
+      "tutor": "Ezequiel, Álvaro",
+      "titulo": "Análisis del impacto en el Paraguay de la inclusión de la cooperación en buenas prácticas regulatorias en los acuerdos comerciales internacionales.",
+      "modalidad_id": 1,
+      "dependencia_id": 1,
+      "nro_acto": "no menciona",
+      "calificacion": "no menciona",
+      "miembros_mesa": "no menciona",
+      "carrera_id": 1,
+      "nivel_id": 1,
+      "sede_id": 1,
+      "cantidad_pagina": 168,
+      "tomo_volumenes": "",
+      "idioma_id": 1,
+      "soporte_id": 1,
+      "nota": "",
+      "resumen": "El objetivo es identificar los beneficios y/o desventajas para el país de las buenas prácticas regulatorias",
+      "observacion": "",
+      "fecha_registro": "22/2/2021",
+      "usuario_registro": "gabyaveiro",
+      "usuario_edicion": "ciroferrario",
+      "usuario_eliminacion": "ciroferrario",
+      "fecha_edicion": "22/2/2021",
+      "fecha_eliminacion": "22/2/2021",
+      "activo": true
+    }
+  ]
+}
