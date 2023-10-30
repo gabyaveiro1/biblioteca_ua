@@ -19,6 +19,8 @@ export class ListPageComponent implements OnInit {
 
   temp = [];
 
+  titulo: string;
+
   // Table Column Titles
   columns = [{ prop: "usuario" }, { name: "email" }, { name: "acciones" }];
   @ViewChild(DatatableComponent) table: DatatableComponent;
@@ -39,6 +41,7 @@ export class ListPageComponent implements OnInit {
     console.log(data);
   }
   ngOnInit(): void {
+    this.titulo = "Agregar Usuario"
     this.usuariosService.getUsers().subscribe(
       (x) => (this.temp = [...x],this.rows = x),
 
@@ -62,8 +65,10 @@ export class ListPageComponent implements OnInit {
     this.table.offset = 0;
   }
   edit(id) {
+    this.titulo = "Editar Usuario"
     console.log(id);
     this.usuariosService.getUserById(id).subscribe((user) => {
+      console.log(user);
       this.userForm.reset(user);
       return;
     });
@@ -72,36 +77,8 @@ export class ListPageComponent implements OnInit {
     console.log(id);
     this.usuariosService.deleteUserById(id).subscribe((user) => {
       console.log(user);
+      return;
     });
-  }
-  onDeleteUser(id: number) {
-    console.log(id);
-    this.usuariosService.deleteUserById(id);
-    // if ( !id ) throw Error('Hero id is required');
-
-    // const dialogRef = this.dialog.open( ConfirmDialogComponent, {
-    //   data: this.userForm.value
-    // });
-
-    // dialogRef.afterClosed()
-    //   .pipe(
-    //     filter( (result: boolean) => result ),
-    //     switchMap( () => this.heroesService.deleteHeroById( this.currentHero.id )),
-    //     filter( (wasDeleted: boolean) => wasDeleted ),
-    //   )
-    //   .subscribe(() => {
-    //     this.router.navigate(['/heroes']);
-    //   });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if ( !result ) return;
-
-    //   this.heroesService.deleteHeroById( this.currentHero.id )
-    //   .subscribe( wasDeleted => {
-    //     if ( wasDeleted )
-    //       this.router.navigate(['/heroes']);
-    //   })
-    // });
   }
   get currentUser(): Usuario {
     const user = this.userForm.value as unknown as Usuario;
@@ -116,4 +93,6 @@ export class ListPageComponent implements OnInit {
     }
     this.usuariosService.addUser(this.currentUser).subscribe((user) => {});
   }
+
+
 }
