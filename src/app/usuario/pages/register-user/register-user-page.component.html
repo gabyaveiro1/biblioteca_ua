@@ -1,76 +1,115 @@
-<!-- 
-<div class="flex flex-column">
-  <span class="text-lg mb-4 text-center">Registro</span>
-
-  <form action="" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <mat-form-field class="col-12 sm:col-6">
-      <mat-label>Usuario</mat-label>
-      <input type="text" matInput placeholder="Nombre de usuario" formControlName="usuario" />
-    </mat-form-field>
-
-    <mat-form-field class="col-12 sm:col-6">
-      <mat-label>Nombre</mat-label>
-      <input type="text" matInput placeholder="Nombre" />
-    </mat-form-field>
-
-    <mat-form-field class="col-12 sm:col-6">
-      <mat-label>E-mail</mat-label>
-      <input type="text" matInput placeholder="E-mail" formControlName="email" />
-    </mat-form-field>
-
-    <mat-form-field class="col-12 sm:col-6">
-      <mat-label>Contraseña</mat-label>
-      <input type="password" matInput placeholder="Contraseña" />
-    </mat-form-field>
-  </form>
-  <button mat-button mat-flat-button color="primary" (click)="onSubmit()">
-    <mat-icon>save</mat-icon>
-    Crear cuenta
-
-  </button>
-
-  <div class="flex justify-content-end mt-5">
-    <a routerLink="/auth/login">¿Ya tienes cuenta?</a>
+<!-- Modal Crear -->
+<div class="modal fade" id="create-modal-user">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title">Agregar Usuario</h5>
+		  <button
+			type="button"
+			class="close"
+			data-dismiss="modal"
+			aria-label="Close"
+		  >
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <form action="" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+			  <label for="input-1">Usuario</label>
+			  <input
+				type="text"
+				class="form-control"
+				id="input-1"
+				placeholder="Ingresa tu usuario"
+				formControlName="usuario"
+			  />
+			</div>
+			<div class="form-group">
+			  <label for="input-2">Email</label>
+			  <input
+				type="text"
+				class="form-control"
+				id="input-2"
+				placeholder="Ingresa tu e-mail"
+				formControlName="email" 
+			  />
+			</div>
+			<div class="form-group">
+			  <label for="input-3">Contraseña</label>
+			  <input
+				type="text"
+				class="form-control"
+				id="input-3"
+				placeholder="Ingresa tu Contraseña"
+			  />
+			</div>
+			<div class="form-group">
+			  <button type="submit" class="btn btn-primary px-5" (click)="onSubmit()">
+				<i class="icon-save"></i> Crear
+			  </button>
+			</div>
+		  </form>
+		</div>
+	  </div>
+	</div>
   </div>
-</div>
-
-<pre>
-  {{currentUser | json }}
-</pre> -->
-				<!-- Modal -->
-				<div class="modal fade" id="formemodal">
-					<div class="modal-dialog modal-dialog-centered">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title">Your modal title here</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<form>
-									<div class="form-group">
-										<label for="input-1">Name</label>
-										<input type="text" class="form-control" id="input-1" placeholder="Enter Your Name">
-									</div>
-									<div class="form-group">
-										<label for="input-2">Email</label>
-										<input type="text" class="form-control" id="input-2" placeholder="Enter Your Email Address">
-									</div>
-									<div class="form-group">
-										<label for="input-3">Password</label>
-										<input type="text" class="form-control" id="input-3" placeholder="Enter Password">
-									</div>
-									<div class="form-group">
-										<div class="icheck-material-white">
-											<input type="checkbox" id="user-checkbox1" checked="">
-											<label for="user-checkbox1">Remember me</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-primary px-5"><i class="icon-lock"></i> Login</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
+  
+  
+  <!-- Modal Editar -->
+  <div class="modal fade" id="edit-modal-user">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title">Editar Usuario</h5>
+		  <button
+			type="button"
+			class="close"
+			data-dismiss="modal"
+			aria-label="Close"
+		  >
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <form action="" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+			  <label for="input-1">Usuario</label>
+			  <input
+				type="text"
+				class="form-control"
+				id="input-1"
+				placeholder="Ingresa tu usuario"
+				formControlName="usuario"
+			  />
+			</div>
+			<div class="form-group">
+			  <label for="input-2">Email</label>
+			  <input
+				type="text"
+				class="form-control"
+				id="input-2"
+				placeholder="Ingresa tu e-mail"
+				formControlName="email" 
+			  />
+			</div>
+			<div class="form-group">
+			  <label for="input-3">Contraseña</label>
+			  <input
+				type="text"
+				class="form-control"
+				id="input-3"
+				placeholder="Ingresa tu Contraseña"
+			  />
+			</div>
+			<div class="form-group">
+			  <button type="submit" class="btn btn-primary px-5" (click)="onSubmit()">
+				<i class="icon-save"></i> Editar
+			  </button>
+			</div>
+		  </form>
+		</div>
+	  </div>
+	</div>
+  </div>
+  

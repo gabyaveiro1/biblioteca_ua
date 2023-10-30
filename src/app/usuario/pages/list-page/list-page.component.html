@@ -1,31 +1,3 @@
-<!-- Breadcrumb-->
-<!-- <div class="row pt-2 pb-2">
-	<div class="col-sm-9">
-		<h4 class="page-title">Filter</h4>
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="javaScript:;">Bulona</a>
-			</li>
-			<li class="breadcrumb-item"><a href="javaScript:;">Data Table</a>
-			</li>
-			<li class="breadcrumb-item active" aria-current="page">Filter</li>
-		</ol>
-	</div>
-	<div class="col-sm-3">
-		<div ngbDropdown class="btn-group float-sm-right">
-			<button type="button" class="btn btn-outline-danger"><i class="fa fa-cog mr-1"></i> Setting</button>
-			<button type="button" class="btn btn-danger" id="dropdownBasic5" ngbDropdownToggle> <span class="caret"></span>
-			</button>
-			<div ngbDropdownMenu aria-labelledby="dropdownBasic5"> 
-				<a href="javaScript:;" ngbDropdownItem>Action</a>
-				<a href="javaScript:;" ngbDropdownItem>Another action</a>
-				<a href="javaScript:;" ngbDropdownItem>Something else here</a>
-				<div class="dropdown-divider"></div> 
-				<a href="javaScript:;" ngbDropdownItem>Separated link</a>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- End Breadcrumb-->
 <!-- Filter Datatable Options Starts -->
 <div class="row">
   <div class="col-sm-12 mb-4">
@@ -36,15 +8,14 @@
           class="justify-content-end"
           type="button"
           class="btn btn-success m-1"
-          data-toggle="modal" 
-          data-target="#formemodal"
+          data-toggle="modal"
+          data-target="#create-modal-user"
         >
           <i class="fa fa fa-add"></i> <span> +</span>
         </button>
       </div>
-      
+
       <div class="card-body">
-        
         <input
           type="text"
           class="form-control"
@@ -60,25 +31,27 @@
           [footerHeight]="50"
           [rowHeight]="'auto'"
           [limit]="10"
-          [rows]="rows" 
+          [rows]="rows"
         >
-        <ngx-datatable-column name="usuario"></ngx-datatable-column> 
-        <ngx-datatable-column name="email"></ngx-datatable-column> 
-        <ngx-datatable-column name="acciones" sortable="false" prop="id">
-          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-    
-                <button md-icon-button (click)="blockAgents(value)">
-                  <i class="fa fa-ban"></i>
-                </button>
-    
-                <button md-icon-button (click)="approveAgent(value)">
-                  <i class="fa fa-check"></i>
-                </button>
-    
-          </ng-template>
-    </ngx-datatable-column>
+          <ngx-datatable-column name="usuario"></ngx-datatable-column>
+          <ngx-datatable-column name="email"></ngx-datatable-column>
+          <ngx-datatable-column name="acciones" sortable="false" prop="id">
+            <ng-template
+              let-row="row"
+              let-value="value"
+              ngx-datatable-cell-template
+            >
+              <i
+                class="fa fa-edit"
+                (click)="edit(row.id)"
+                data-toggle="modal"
+                data-target="#edit-modal-user"
+              ></i>
+              |
+              <i class="fa fa-trash-o" (click)="delete(row.id)"></i>
+            </ng-template>
+          </ngx-datatable-column>
         </ngx-datatable>
-
       </div>
     </div>
   </div>
@@ -86,59 +59,4 @@
 
 <!-- Filter Datatable Options Ends -->
 
-<!-- Modal -->
-<div class="modal fade" id="formemodal">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Agregar Usuario</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="input-1">Usuario</label>
-            <input
-              type="text"
-              class="form-control"
-              id="input-1"
-              placeholder="Ingresa tu usuario"
-              formControlName="usuario"
-            />
-          </div>
-          <div class="form-group">
-            <label for="input-2">Email</label>
-            <input
-              type="text"
-              class="form-control"
-              id="input-2"
-              placeholder="Ingresa tu e-mail"
-              formControlName="email" 
-            />
-          </div>
-          <div class="form-group">
-            <label for="input-3">Contraseña</label>
-            <input
-              type="text"
-              class="form-control"
-              id="input-3"
-              placeholder="Ingresa tu Contraseña"
-            />
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary px-5" (click)="onSubmit()">
-              <i class="icon-save"></i> Crear
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+<app-register-user-page></app-register-user-page>
